@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Diretiva V-SLOT</title>
+</head>
+
+<body>
+
+   <div id="directives">
+
+      <text-component>
+         <template v-slot:header>
+            <h2>Header do site</h2>
+         </template>
+         Josias
+      </text-component>
+      <text-component>Junior</text-component>
+      <text-component>Jovane</text-component>
+
+   </div>
+
+   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   <script>
+
+      Vue.component('text-component', {
+         template: `
+
+            <div>
+               <header>
+                  <slot name="header"></slot>
+               </header>
+               <slot></slot>
+            </div>
+
+         `
+      })
+
+      let app = new Vue({
+         el: '#directives',
+         data: {
+
+         }
+      })
+   </script>
+</body>
+
+</html>

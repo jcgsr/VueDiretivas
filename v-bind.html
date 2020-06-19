@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Diretiva V-BIND</title>
+</head>
+
+<body>
+
+   <div id="directives">     
+     
+      <h2>Acesse o site abaixo</h2>
+
+      <a v-bind:href="url">Apple</a>
+
+      <p v-bind:[arg]="value">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis consequatur incidunt similique sequi, assumenda itaque adipisci rerum provident, hic vel harum placeat officiis eaque odit quibusdam nulla cumque corporis consectetur.</p>
+     
+   </div>
+
+   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   <script>
+      let app = new Vue({
+         el: '#directives',
+         data: {            
+           url: 'https://www.apple.com/br/?afid=p238%7CsC7KKNBEq-dc_mtid_1870765e38482_pcrid_392162609706_pgrid_17049243658_&cid=aos-br-kwgo-brand--slid---product-',
+           arg: 'title',
+           value: 'Parágrafo de Exemplo'
+         }
+      })
+   </script>
+</body>
+
+</html>

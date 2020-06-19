@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Diretiva V-FOR</title>
+</head>
+
+<body>
+
+   <div id="directives">
+
+      <h2 key='cities'>Cidades de Pernambuco</h2>
+      <!--Array-->
+      <ol>
+         <li v-for="city in cities">{{ city }}</li>
+      </ol>
+
+      <h2 key="beaches">Praias de Pernambuco</h2>
+      <!--Objct-->
+      <ol>
+         <li v-for="item in beaches">
+            {{ item.beach }} - {{ item.city }}
+         </li>
+      </ol>
+   </div>
+
+   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   <script>
+      let app = new Vue({
+         el: '#directives',
+         data: {
+            // Array
+            cities: ['Recife', 'Olinda', 'Cabo', 'Jaboatão', 'Porto de Galinhas'],
+            // Object
+            beaches: [{
+               beach: 'Boa Viagem',
+               city: 'Recife'
+            }, {
+               beach: 'Piedade',
+               city: 'Jaboatão'
+            }, {
+               beach: 'Pina',
+               city: 'Recife'
+            }, {
+               beach: 'Casa Caiada',
+               city: 'Olinda'
+            }]
+         }
+      })
+   </script>
+</body>
+
+</html>
